@@ -8,7 +8,7 @@ const TodoItem = (props) => {
     firstIncompleteTaskRef,
     firstIncompleteTaskId,
     deleteTask,
-    ToggleTaskComplete,
+    toggleTaskComplete,
   } = useContext(TasksContext);
 
   return (
@@ -21,7 +21,7 @@ const TodoItem = (props) => {
         id={id}
         type="checkbox"
         checked={isDone}
-        onChange={(event) => ToggleTaskComplete(id, event.target.checked)}
+        onChange={(event) => toggleTaskComplete(id, event.target.checked)}
       />
       <label className="todo-item__label" htmlFor={id}>
         {title}
