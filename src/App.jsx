@@ -1,14 +1,15 @@
-import Todo from './components/Todo';
-import { TaskProvider } from './context/TasksContext';
+import Router from './Router';
+import TasksPage from './pages/TasksPage';
+import TaskPage from './pages/TaskPage';
 
 const App = () => {
-  console.log('app');
+  const routes = {
+    '/': TasksPage,
+    '/tasks/:id': TaskPage,
+    '*': () => <div>404 page not found</div>,
+  };
 
-  return (
-    <TaskProvider>
-      <Todo />;
-    </TaskProvider>
-  );
+  return <Router routes={routes} />;
 };
 
 export default App;
